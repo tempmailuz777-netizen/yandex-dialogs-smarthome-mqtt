@@ -1,6 +1,6 @@
 module.exports = {
   mqtt: {
-    host: 'baa08601d2eb4d6b905b289ef2a9ef2e.s1.eu.hivemq.cloud',
+    host: '6130e7659e9d454798a431aecf36a909.s1.eu.hivemq.cloud',
     port: 8883,
     user: 'esp32_home',
     password: 'eski yil bilan'
