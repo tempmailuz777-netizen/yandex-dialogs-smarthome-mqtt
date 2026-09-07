@@ -87,7 +87,7 @@ global.updateDevices();
 new api();
 
 console.log('Connecting to MQTT...');
-const client = mqtt.connect(`mqtts://${config.mqtt.host}`, {
+const client = mqtt.connect(`mqtt://${config.mqtt.host}`, {
   port: config.mqtt.port,
   username: config.mqtt.user,
   password: config.mqtt.password
