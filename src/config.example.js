@@ -7,17 +7,34 @@ module.exports = {
   },
   devices: [
     {
-      name: 'Xona chirog\'i',
-      room: 'AkalarPC',
+      name: 'RGB lampa',
+      room: 'Xona',
       type: 'devices.types.light',
       mqtt: {
-        set: 'home/relay1/set',
-        stat: 'home/relay1/state'
-      }
+        set: 'home/lamp/power/set',
+        stat: 'home/lamp/power/state',
+        rgb: {
+          set: 'home/lamp/rgb/set',
+          stat: 'home/lamp/rgb/state'
+        }
+      },
+      capabilities: [
+        {
+          type: 'devices.capabilities.on_off',
+          retrievable: true,
+          state: { instance: 'on', value: false }
+        },
+        {
+          type: 'devices.capabilities.color_setting',
+          retrievable: true,
+          parameters: { color_model: 'rgb' },
+          state: { instance: 'rgb', value: 16777215 }
+        }
+      ]
     },
     {
       name: 'Oshxona chirog\'i',
-      room: 'AkalarPC',
+      room: 'Oshxona',
       type: 'devices.types.light',
       mqtt: {
         set: 'home/relay2/set',
@@ -26,7 +43,7 @@ module.exports = {
     },
     {
       name: 'Konditsioner',
-      room: 'AkalarPC',
+      room: 'Xona',
       type: 'devices.types.socket',
       mqtt: {
         set: 'home/relay3/set',
@@ -35,7 +52,7 @@ module.exports = {
     },
     {
       name: 'Suv isitgich',
-      room: 'AkalarPC',
+      room: 'Hammom',
       type: 'devices.types.socket',
       mqtt: {
         set: 'home/relay4/set',
